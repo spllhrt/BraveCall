@@ -87,6 +87,7 @@ body {
 
 .bottom-section p {
     font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .bottom-section .learn-more {
@@ -111,6 +112,23 @@ body {
     font-weight: 1000;
     color: black;
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.right-section button {
+    margin-top: 35px;
+    width: 25%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 .form-group {
@@ -129,7 +147,7 @@ input {
 }
 
 button {
-    width: 100%;
+    width: 25%;
     padding: 12px;
     background-color: black;
     color: white;
