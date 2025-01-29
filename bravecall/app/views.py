@@ -42,3 +42,11 @@ def login_user(request):
             messages.error(request, "User not found")
     
     return render(request, 'login.html')
+
+def homepage(request):
+    # Homepage view logic here
+    return render(request, 'homepage.html')
+
+def about(request):
+    # About page view logic here
+    return render(request, 'about.html')

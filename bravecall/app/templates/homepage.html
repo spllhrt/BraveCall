@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BraveCall</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, white, #ddd);
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .content {
+            max-width: 500px;
+            margin-left: 0.5in;
+        }
+        .content h1 {
+            font-size: 48px;
+            color: black;
+        }
+        .content p {
+            font-size: 16px;
+            color: black;
+        }
+        .action-container {
+            display: flex;
+            gap: 20px; 
+            align-items: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: gray;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 0.5in; 
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+        .contact-item img {
+            width: 20px;
+            height: 20px;
+        }
+        .icon {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-1in); 
+        }
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-bottom: 2px solid black;
+        }
+        .header a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="..\..\static\image\logo.png" alt="BraveCall Logo"> BraveCall
+        </div>
+        <div>
+            <a href="#">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1>You are safe with us.</h1>
+            <p>We are committed to protecting your privacy and well-being. We provide a secure and supportive environment where you can report issues without fear of judgment or harm. Your safety is our top priority.</p>
+            <div class="action-container">
+                <a href="{% url 'signup' %}" class="btn">REGISTER NOW</a>
+                <div class="contact">
+                    <div class="contact-item">
+                        <img src="..\..\static\image\phone.png" alt="Phone"> +123-456-7890
+                    </div>
+                    <div class="contact-item">
+                        <img src="..\..\static\image\email.png" alt="Email"> bravecall@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <img src="..\..\static\image\pin.png" alt="Location"> Taguig City
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="icon">
+            <img src="..\..\static\image\sheild.png" alt="Icon Image">
+        </div>
+    </div>
+</body>
+</html>
