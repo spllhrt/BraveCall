@@ -15,25 +15,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            padding: 20px;
+            height: 70vh;
+            padding: 80px;
+            padding-left: 100px;
+            flex-wrap: wrap;
         }
         .content {
-            max-width: 500px;
+            max-width: 550px;
             margin-left: 0.5in;
         }
         .content h1 {
-            font-size: 48px;
+            font-size: 50px;
             color: black;
         }
         .content p {
-            font-size: 16px;
+            font-size: 18px;
             color: black;
         }
         .action-container {
             display: flex;
             gap: 20px; 
             align-items: center;
+            flex-wrap: wrap;
         }
         .btn {
             display: inline-flex;
@@ -49,7 +52,20 @@
             border: none;
             cursor: pointer;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            gap: 10px; /* Space between circle and text */
+            margin-top: -23px;
         }
+        
+        .btn::before {
+            content: ""; /* Empty content for the circle */
+            width: 15px; /* Circle size */
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
         .btn:hover {
             background: gray;
         }
@@ -58,6 +74,7 @@
             flex-direction: column;
             gap: 10px;
             margin-top: 0.5in; 
+            padding-left:30px;
         }
         .contact-item {
             display: flex;
@@ -66,14 +83,15 @@
             font-size: 16px;
             font-weight: bold;
             color: black;
+            font-size: 18px;
         }
         .contact-item img {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
         }
         .icon {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -92,6 +110,7 @@
             padding: 20px;
             background: white;
             border-bottom: 2px solid black;
+            flex-wrap: wrap;
         }
         .header a {
             margin-left: 20px;
@@ -109,7 +128,69 @@
             height: 40px;
             margin-right: 10px;
         }
+    
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                height: auto;
+            }
+            .content {
+                margin-left: 0;
+                max-width: 90%;
+            }
+            .icon {
+                transform: translateX(0);
+                margin-top: 20px;
+            }
+            
+        }
+    
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 36px;
+            }
+            .content p {
+                font-size: 14px;
+                margin-bottom:50px;
+            }
+            .btn {
+                padding: 12px 75px;
+                font-size: 14px;
+            }
+            .icon {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 28px;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            .icon {
+                width: 150px;
+                height: 150px;
+            }
+            .contact {
+                align-items: center;
+                text-align: center;
+            }
+            .contact-item {
+                flex-direction: column;
+            }
+        }
     </style>
+    
 </head>
 <body>
     <div class="header">

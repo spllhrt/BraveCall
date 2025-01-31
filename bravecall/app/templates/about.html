@@ -18,6 +18,7 @@
             padding: 20px;
             background: white;
             border-bottom: 2px solid black;
+            flex-wrap: wrap;
         }
         .header a {
             margin-left: 20px;
@@ -39,18 +40,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            padding: 20px;
+            height: 70vh;
+            padding: 80px;
+            flex-wrap: wrap;
+            text-align: left;
         }
         .team {
             text-align: left;
-            width: 30%;
+            width: 100%;
+            max-width: 30%;
         }
         .leader, .members {
             display: flex;
             flex-direction: column;
             align-items: center;
-            
         }
         .team img {
             width: 80px;
@@ -62,7 +65,6 @@
         .leader {
             margin-bottom: 30px;
             margin-left: 2in;
-
         }
         .members {
             display: flex;
@@ -71,7 +73,7 @@
             gap: 20px;
             width: 100%;
             margin-left: 1in;
-
+            flex-wrap: wrap;
         }
         .members div {
             text-align: center;
@@ -81,14 +83,70 @@
             margin-right: 1.5in;
         }
         h1 {
-            font-size: 48px;
+            font-size: 50px;
             color: black;
         }
         p {
-            font-size: 16px;
+            font-size: 18px;
             color: black;
         }
+    
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                text-align: center;
+            }
+            .team {
+                width: 80%;
+                max-width: none;
+                text-align: center;
+            }
+            .leader {
+                margin-left: 0;
+            }
+            .members {
+                margin-left: 0;
+            }
+            .about-content {
+                margin-right: 0;
+                max-width: 90%;
+                text-align: center;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .team img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .team img {
+                width: 50px;
+                height: 50px;
+            }
+            .members {
+                gap: 10px;
+            }
+        }
     </style>
+    
 </head>
 <body>
     <div class="header">

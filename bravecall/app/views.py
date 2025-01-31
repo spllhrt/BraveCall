@@ -10,15 +10,13 @@ def signup(request):
         password = request.POST['password']
         dob = request.POST['dob']
         
-        # Hash the password before saving it
         hashed_password = make_password(password)
 
-        # Create and save the user
         user = User(email=email, name=name, password=hashed_password, dob=dob)
         user.save()
 
         messages.success(request, "User registered successfully!")
-        return redirect('login')  # Redirect to login page after successful signup
+        return redirect('login')
     return render(request, 'signup.html')
 
 
@@ -28,14 +26,11 @@ def login_user(request):
         password = request.POST['password']
         
         try:
-            # Find the user by email
             user = User.objects.get(email=email)
 
-            # Check if the password matches
             if check_password(password, user.password):
-                # Successful login (you can add a session or authentication logic here)
                 messages.success(request, "Login successful!")
-                return redirect('home')  # Redirect to a home page or dashboard
+                return redirect('home')  
             else:
                 messages.error(request, "Invalid password")
         except User.DoesNotExist:
@@ -44,9 +39,10 @@ def login_user(request):
     return render(request, 'login.html')
 
 def homepage(request):
-    # Homepage view logic here
     return render(request, 'homepage.html')
 
 def about(request):
-    # About page view logic here
     return render(request, 'about.html')
+
+def navbar(request):
+    return render(request, 'admin/navbar.html')
