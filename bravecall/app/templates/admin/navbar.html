@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: linear-gradient(to right, white, #ddd);
             display: flex;
         }
 
@@ -62,7 +62,7 @@
         .sidebar-links a {
             display: flex;
             align-items: center;
-            padding: 15px 20px;
+            padding: 30px 20px;
             text-decoration: none;
             color: #333;
             font-size: 1rem;
@@ -77,18 +77,24 @@
             font-weight: bold;
         }
 
-        .sidebar-links a .icon {
+        .sidebar-links a img {
             margin-right: 10px;
             font-size: 1.2rem;
         }
 
+        .sidebar-links a img {
+            width: 20px;  /* Adjust width */
+            height: 20px; /* Adjust height */
+            margin-right: 10px;
+        }
+
         /* Navbar styles */
         .navbar {
-            flex: 1;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 3rem;
+            height: 117px;       
+            padding: 0 3rem;  
             background-color: #f8f8f8;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -97,7 +103,6 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: #333;
-            padding: 1rem;
          }
         
 
@@ -152,9 +157,9 @@
     </div>
         
         <ul class="sidebar-links">
-            <li><a href="#" class="active"><span class="icon">🏠</span> Dashboard</a></li>
-            <li><a href="#"><span class="icon">👤</span> Manage Users</a></li>
-            <li><a href="#"><span class="icon">⚠️</span> Manage Reports</a></li>
+            <li><a href="#" class="active"><img src="..\..\static\image\home.png" alt="BraveCall Logo" />Dashboard</a></li>
+            <li><a href="#"><img src="..\..\static\image\profile-user.png" alt="BraveCall Logo" /> Manage Users</a></li>
+            <li><a href="#"><img src="..\..\static\image\exclamation.png" alt="BraveCall Logo" />Manage Reports</a></li>
         </ul>
     </div>
     <div class="main-content">
