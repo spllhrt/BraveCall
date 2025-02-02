@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BraveCall</title>
-    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <link rel="stylesheet" href="../static/profile.css">
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <img src="..\..\static\image\logo.png" alt="BraveCall Logo"> BraveCall
+            <img src="{% static 'image/logo.png' %}" alt="BraveCall Logo"> BraveCall
         </div>
         <div>
             <a href="#">Home</a>
-            <a href="{% url 'about' %}">My Reports</a>
-            <a href="{% url 'login' %}">Profile</a>
+            <a href="#">My Reports</a>
+            <a href="#" class="highlighted">Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
         </div>
+        
     </div>
+
     <div class="container">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <div class="form-group">
+                <div class="profile">
+                    <img
+                        src="{% if user.profile_picture %}{{ user.profile_picture.url }}{% else %}{% static 'profile_pics/profile-user.png' %}{% endif %}" alt="Profile Image">
+                </div>
+                <input type="file" id="profile-input" name="profile_picture" accept="image/*">
+                <button type="submit">Update Profile</button>
+            </div>
             <div class="form-group">
                 <label for="name">NAME</label>
                 <input type="text" name="name" placeholder="{{ user.name }}" value="{{ user.name }}">
@@ -32,20 +42,22 @@
             </div>
             <div class="form-group">
                 <label for="old_password">Old Password</label>
-                <input type="password" name="old_password"placeholder="********">
+                <input type="password" name="old_password" placeholder="********">
             </div>
             <div class="form-group">
                 <label for="new_password">New Password</label>
-                <input type="password" name="new_password"placeholder="********">
+                <input type="password" name="new_password" placeholder="********">
             </div>
             <div class="form-group">
                 <label for="confirm_password">Confirm New Password</label>
-                <input type="password" name="confirm_password"placeholder="********">
+                <input type="password" name="confirm_password" placeholder="********">
             </div>
             <div class="form-group">
                 <button type="submit">Change Password</button>
             </div>
         </form>
-    </div>    
+    </div>
+
 </body>
+
 </html>

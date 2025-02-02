@@ -76,3 +76,25 @@ button {
 button:hover {
     background-color: #333;
 }
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 300px !important;
+    height: 300px !important; 
+    border-radius: 50% !important; 
+    object-fit: cover !important;
+    border: 10px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.highlighted {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
