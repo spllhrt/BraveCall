@@ -84,8 +84,8 @@ button:hover {
 }
 
 .profile img {
-    width: 300px !important;
-    height: 300px !important; 
+    width: 120px !important;
+    height: 120px !important; 
     border-radius: 50% !important; 
     object-fit: cover !important;
     border: 10px solid #333;
