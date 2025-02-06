@@ -42,7 +42,7 @@ def login_user(request):
                 request.session['user_name'] = user.name
 
                 messages.success(request, "Login successful!")
-                return redirect('profile')  
+                return redirect('dashboard')  
             else:
                 messages.error(request, "Invalid password")
         except User.DoesNotExist:
